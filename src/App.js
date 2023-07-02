@@ -1,25 +1,29 @@
-import logo from './logo.svg';
-import './App.css';
-
-function App() {
+import React from "react";
+import "./App.css";
+import { Route, Routes } from "react-router-dom";
+import PageHome from "./component/pages/PageHome";
+import PageWatchList from "./component/pages/PageWatchList";
+import PageComingSoon from "./component/pages/PageComingSoon";
+import PageTopRated from "./component/pages/PageTopRated";
+import PageLogin from "./component/pages/Login/PageLogin";
+import PageSearch from "./component/pages/PageSearch";
+import PageSearchQuery from "./component/pages/PageSearchQuery";
+const App = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <Routes>
+        <Route path="/" element={<PageHome />} />
+        <Route path="/WatchList" element={<PageWatchList />} />
+        <Route path="/ComingSoon" element={<PageComingSoon />} />
+        <Route path="/TopRated" element={<PageTopRated />} />
+        <Route path="/Login" element={<PageLogin />} />
+        <Route path="/Search" element={<PageSearch />} />
+        <Route path="/QuerySearch" element={<PageSearchQuery />} />
+
+
+      </Routes>
+    </>
   );
-}
+};
 
 export default App;

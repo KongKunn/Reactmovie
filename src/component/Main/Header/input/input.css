@@ -1,0 +1,25 @@
+.main_input {
+    width: 70%;
+    display: flex;
+    padding-left: 15em;
+  }
+  
+  .input {
+    border: none;
+    outline: none;
+    width: 450px;
+    border: 2px solid #5e738b;
+    border-radius: 15px;
+    padding: 1em;
+    background-color: #fffcfc;
+    transition: 300ms ease-in-out;
+    justify-content: flex-start;
+  }
+  
+  .input:focus {
+    background-color: rgb(184, 179, 179);
+    transform: scale(1.05);
+    box-shadow: 13px 13px 100px #969696,
+    -13px -13px 100px #ffffff;
+  
+  }

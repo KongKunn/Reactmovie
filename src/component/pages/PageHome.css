@@ -1,0 +1,11 @@
+button {
+  cursor: pointer;
+}
+.Lists_movies {
+  width: 0px;
+  color: rgb(0, 0, 0);
+  left: 0;
+}
+.Lists_movies:hover {
+  color: red;
+}
