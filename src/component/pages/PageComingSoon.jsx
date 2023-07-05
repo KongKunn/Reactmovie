@@ -3,6 +3,8 @@ import Nav from "../Nav/Nav";
 import Header from "../Main/Header/Header";
 import Component from "../Component";
 import Content from "../Main/Content/Content";
+import Pagination from "../Main/Pagination/Pagination";
+import ReactPaginate from "react-paginate";
 
 const PageComingSoon = () => {
   const options = {
@@ -13,26 +15,39 @@ const PageComingSoon = () => {
         "Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiI5NDBmNDE5Nzg2ODdlYjRkNDA4MTRjZWQ5NmMxNGY3MiIsInN1YiI6IjY0NjVkMWI1ZDE4NTcyMDE0MDJmNmI4ZiIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.UWuHQwXdC-wJxn69D49_xz7tgNxq8pC9aKv1IK0FmF0",
     },
   };
-  const [movies, setMovies] = useState([]);
+    const [currentPage, setCurrentPage] = useState(1);
+  const [item, setItem] = useState([]);
 
   useEffect(() => {
-    fetch(
-      "https://api.themoviedb.org/3/movie/upcoming?language=en-US&page=1",
-      options
-    )
-      .then((response) => response.json())
-      .then((response) => {
-        setMovies(response.results);
-      })
-      .catch((err) => console.error(err));
-  }, []);
+    const fetchData = () => {
+      const urlSearch = `https://api.themoviedb.org/3/movie/now_playing?language=en-US&page=${currentPage}`;
+      fetch(urlSearch, options)
+        .then((response) => response.json())
+        .then((response) => {
+          console.log("@@@data: ", response);
+          setItem(response.results);
+        });
+    };
 
+    fetchData();
+  }, [currentPage]);
+
+  const handlePageClick = (data) => {
+    const selectpage = data.selected + 1;
+    console.log("XX", data);
+    setCurrentPage(selectpage);
+    console.log(selectpage);
+  };
   return (
     <>
       <Nav />
       <div style={{ width: "75em", marginLeft: "25%" }}>
         <Header />
-        <Content movies={movies} />
+        <Content movies={item} />
+
+        <Pagination
+        handleclick = {handlePageClick}
+        />
       </div>
     </>
   );

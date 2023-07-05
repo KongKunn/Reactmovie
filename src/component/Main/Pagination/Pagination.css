@@ -1,0 +1,14 @@
+.pagination{
+    display: flex;
+    list-style: none   ;
+    padding: 0;
+    margin-bottom: 6%;
+    cursor: pointer;
+}
+
+a{
+    margin-right: 50px;
+}
+.page-item{
+    margin-right: 50px;
+}

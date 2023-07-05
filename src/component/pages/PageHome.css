@@ -3,6 +3,7 @@ button {
 }
 .Lists_movies {
   width: 0px;
+  /* padding-top: 1px; */
   color: rgb(0, 0, 0);
   left: 0;
 }

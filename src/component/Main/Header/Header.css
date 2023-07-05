@@ -1,7 +1,10 @@
 .Header {
+    position: fixed;
     top: 0;
+    width: 72%;
     display: flex;
     background-color: #fff;
-    padding: 40px;
-    margin-left:1% ;
+    padding: 20px;
+    z-index: 9999999999999999999999;
 }
+

@@ -1,6 +1,7 @@
 .movie-list {
     display: flex;
     flex-wrap: wrap;
+    /* padding-top: 10%; */
     justify-content: flex-start;
   }
   
@@ -11,26 +12,33 @@
     background-color: #f5f5f5;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     border-radius: 20px;
+    background-color: black
+    
+
   }
   
   .movie-image img {
     width: 100%;
     height: auto;
+    border-radius: 20px;
   }
   
   .movie-name {
     font-size: 16px;
     font-weight: bold;
     margin-top: 8px;
+    color: #f8f2f2;
   }
   
   .movie-date {
     font-size: 14px;
-    color: #888;
+    color: #a59696;
   }
   
   .movie-rating {
     font-size: 14px;
     color: #888;
   }
-  
+  button{
+    margin: 1.5% 0;
+  }

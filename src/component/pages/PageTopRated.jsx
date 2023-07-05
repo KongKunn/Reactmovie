@@ -3,6 +3,8 @@ import Nav from "../Nav/Nav";
 import Header from "../Main/Header/Header";
 import Component from "../Component";
 import Content from "../Main/Content/Content";
+import { Outlet} from "react-router-dom";
+
 
 const PageTopRated = () => {
   const options = {
@@ -33,6 +35,7 @@ const PageTopRated = () => {
       <div style={{ width: "75em", marginLeft: "25%" }}>
         <Header />
         <Content movies={toprate} />
+        <Outlet/>
       </div>
     </>
   );

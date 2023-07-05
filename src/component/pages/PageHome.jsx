@@ -8,6 +8,7 @@ import Body from "../Main/Body/Body";
 import PageTopRated from "./PageTopRated";
 import PageComingSoon from "./PageComingSoon";
 import "./PageHome.css";
+import { Pagination } from "swiper";
 
 const PageHome = () => {
   const options = {
@@ -79,34 +80,36 @@ const PageHome = () => {
 
       <Main>
         <Body />
+        <Link to="/detail/a">link</Link>
+        <>
         <Link to="/ComingSoon">
           <button>
             <h3 className="Lists_movies">Watchlist</h3>
           </button>
         </Link>
         <Content movies={upcoming.slice(0, 5)} />
+        </>
+        
 
         <Link className="link" to="/WatchList">
           <button>
             <h3 className="Lists_movies">NowPlaying</h3>
-
-            <Content movies={nowplaying.slice(0, 5)} />
           </button>
         </Link>
+        <Content movies={nowplaying.slice(0, 5)} />
+
         <Link className="link" to="/TopRated">
           <button>
             <h3 className="Lists_movies">Popular</h3>
-
-            <Content movies={watchlist.slice(0, 5)} />
           </button>
         </Link>
+        <Content movies={watchlist.slice(0, 5)} />
         <Link className="link" to="/TopRated">
           <button>
             <h3 className="Lists_movies">TopRated</h3>
-
-            <Content movies={toprate.slice(0, 5)} />
           </button>
         </Link>
+        <Content movies={toprate.slice(0, 5)} />
       </Main>
     </>
   );

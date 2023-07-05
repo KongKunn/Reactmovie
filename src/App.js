@@ -8,6 +8,8 @@ import PageTopRated from "./component/pages/PageTopRated";
 import PageLogin from "./component/pages/Login/PageLogin";
 import PageSearch from "./component/pages/PageSearch";
 import PageSearchQuery from "./component/pages/PageSearchQuery";
+import Detail from "./component/Detail/Detail";
+import PageDetail from "./component/pages/PageDetail";
 const App = () => {
   return (
     <>
@@ -15,10 +17,14 @@ const App = () => {
         <Route path="/" element={<PageHome />} />
         <Route path="/WatchList" element={<PageWatchList />} />
         <Route path="/ComingSoon" element={<PageComingSoon />} />
-        <Route path="/TopRated" element={<PageTopRated />} />
+        <Route path="/TopRated" element={<PageTopRated />}  />
+         
         <Route path="/Login" element={<PageLogin />} />
         <Route path="/Search" element={<PageSearch />} />
         <Route path="/QuerySearch" element={<PageSearchQuery />} />
+        <Route path="/detail" >
+          <Route path=":id"  element={<PageDetail />} />
+        </Route>
 
 
       </Routes>
