@@ -10,7 +10,11 @@ import PageSearch from "./component/pages/PageSearch";
 import PageSearchQuery from "./component/pages/PageSearchQuery";
 import Detail from "./component/Detail/Detail";
 import PageDetail from "./component/pages/PageDetail";
+import {  onAuthStateChanged } from "firebase/auth";
+import { auth } from "./firebase";
+
 const App = () => {
+
   return (
     <>
       <Routes>

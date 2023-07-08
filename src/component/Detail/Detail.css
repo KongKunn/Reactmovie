@@ -1,0 +1,23 @@
+.detail {
+  display: grid;
+  grid-template-columns: 20% 80%;
+  height: 100vh;
+}
+.detail_Nav{
+    /* position: fixed;
+    top: 0;
+    left: 0;
+    width: 20%;
+    height: 100%;
+    background-color: #fff; */
+}
+.detail_Header{
+    /* width: 75em;
+    height: 100vh;
+    margin-left: 25%; */
+
+}
+.content_detail{
+  display: flex;
+  justify-content: center;
+}

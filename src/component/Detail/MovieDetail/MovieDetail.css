@@ -1,0 +1,14 @@
+.img_detail{
+    padding-top: 10%;
+    /* background-color: blue; */
+}
+.img_detail img{
+    border-radius: 10px;
+    padding-left: 5%;
+}
+.img_backgroud{
+    border-bottom: 1px solid var(--primaryColor);
+    background-position: left calc((50vw - 170px) - 340px) top;
+    background-size: cover;
+    background-repeat: no-repeat;
+    }

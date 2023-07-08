@@ -3,6 +3,7 @@ import { useParams } from 'react-router-dom';
 import Nav from '../Nav/Nav';
 import Header from '../Main/Header/Header';
 import Detail from '../Detail/Detail';
+import MovieDetail from '../Detail/MovieDetail/MovieDetail';
 
 const PageDetail = () => {
   const [movie, setMovie] = useState({});
@@ -19,25 +20,23 @@ const PageDetail = () => {
     fetch(`https://api.themoviedb.org/3/movie/${params.id}?language=en-US`,options)
       .then((response) => response.json())
       .then((response) => {
+        console.log("RESTSS",response);
         setMovie(response);
       })
       .catch((err) => console.error(err));
   }, [params.id]);
 
-  console.log("id", movie.title);
+  console.log("idd", movie);
 
   return (
     <div>
-      <Nav/>
-      <Header/>
-      <Detail/>
-      <h1>{movie.title}</h1>
+      <Detail movie ={movie} />
+      {/* <h1>{movie.title}</h1>
       <p>{movie.overview}</p>
-      <img src="" alt="" />
       <img
-                src={`https://image.tmdb.org/t/p/w500/${movie.poster_path}`}
-                alt={movie.title}
-              />
+        src={`https://image.tmdb.org/t/p/w500/${movie.poster_path}`}
+        alt={movie.title}
+      /> */}
     </div>
   );
 };

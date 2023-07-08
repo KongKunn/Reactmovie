@@ -29,10 +29,10 @@ const PagePopular = () => {
   return (
     <>
       <Nav />
-      <div style={{ width: "75em", marginLeft: "25%" }}>
         <Header />
-        <Content movies={toprate} />
-      </div>
+        <div style={{ paddingTop: "40%" }}>
+          <Content movies={toprate} />
+        </div>
     </>
   );
 };

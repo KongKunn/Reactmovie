@@ -15,7 +15,6 @@ const PageWatchList = () => {
     },
   };
   const [movies, setMovies] = useState([]);
-  // https://api.themoviedb.org/3/search/movie?query=john&include_adult=false&language=en-US&page=1
   useEffect(() => {
     fetch(
       "https://api.themoviedb.org/3/movie/now_playing?language=en-US&page=1",
@@ -31,7 +30,7 @@ const PageWatchList = () => {
   return (
     <>
       <Nav />
-      <div style={{ width: "75em", marginLeft: "25%" }}>
+      <div style={{ width: "75em", height: "100vh", marginLeft: "25%" }}>
         <Header />
         <Content movies={movies} />
       </div>

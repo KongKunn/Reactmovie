@@ -7,10 +7,7 @@ import { Navigate } from "react-router-dom";
 const Input = () => {
   const [input, setInput] = useState("");
 
-  const handleChangeInput = (value) => {
-    setInput(value);
-  };
-
+ 
   const [searchParams, setSearchParams] = useSearchParams();
 
   const navigate = useNavigate();
@@ -27,6 +24,11 @@ const hanldleEnter =(e)=> {
  {handleClick()}
 
 }
+const handleChangeInput = (e) => {
+  console.log(2);
+  setInput(e.target.value);
+};
+
   return (
     <div className="main_input">
       <input
@@ -36,7 +38,7 @@ const hanldleEnter =(e)=> {
         name="text"
         placeholder="Search..."
         value={input}
-        onChange={(e) => handleChangeInput(e.target.value)}
+        onChange={handleChangeInput}
         onKeyDown={hanldleEnter}
       />
       <button className="search" onClick={handleClick}>

@@ -9,6 +9,9 @@ import PageTopRated from "./PageTopRated";
 import PageComingSoon from "./PageComingSoon";
 import "./PageHome.css";
 import { Pagination } from "swiper";
+import { auth } from "../../firebase";
+
+import {  onAuthStateChanged } from "firebase/auth";
 
 const PageHome = () => {
   const options = {
@@ -76,11 +79,13 @@ const PageHome = () => {
 
   return (
     <>
+   
       <Nav />
 
       <Main>
+      
         <Body />
-        <Link to="/detail/a">link</Link>
+        
         <>
         <Link to="/ComingSoon">
           <button>
@@ -110,6 +115,8 @@ const PageHome = () => {
           </button>
         </Link>
         <Content movies={toprate.slice(0, 5)} />
+
+ 
       </Main>
     </>
   );

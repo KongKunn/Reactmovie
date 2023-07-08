@@ -1,0 +1,42 @@
+.Cast {
+  width: 10%;
+}
+.Cast img {
+  width: 15%;
+}
+.slick-slide img {
+  width: 40%;
+}
+.button_cast {
+  display: flex;
+  gap: 20px;
+}
+
+.actor-button {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  border: none;
+  background-color: transparent;
+}
+
+.actor-button img {
+  height: 150px;
+  width: auto;
+  /* border-radius: 50%; */
+  margin-bottom: 10px;
+}
+
+.actor-button span {
+  font-size: 16px;
+}
+h2{
+    width: 20%;
+}
+.slick-slider {
+
+    width: 60%;}
+    .billcast{
+        padding-left: 5%;
+    }

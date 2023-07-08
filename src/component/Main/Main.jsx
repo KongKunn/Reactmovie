@@ -6,7 +6,7 @@ import Content from './Content/Content'
 import Pagination from './Pagination/Pagination'
 
 const Main = (props) => {
-  console.log(props);
+  console.log("PROPOSPEDPAS",props.children);
 
   return (
     <div className='Main'>

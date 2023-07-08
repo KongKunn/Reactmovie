@@ -10,3 +10,19 @@ button {
 .Lists_movies:hover {
   color: red;
 }
+/* .botom{
+  display: flex;
+  position: fixed;
+  z-index: 999999999999999999;
+  bottom: 0;
+  right: 0;
+  width: 300px;
+} */
+.O{
+  position: fixed;
+  padding-bottom: 20px;
+  font-size: 50px;
+  bottom: 20px;
+  right: 0;
+  width: 300px;
+}

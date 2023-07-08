@@ -41,10 +41,11 @@ const PageComingSoon = () => {
   return (
     <>
       <Nav />
-      <div style={{ width: "75em", marginLeft: "25%" }}>
-        <Header />
-        <Content movies={item} />
+    
 
+      <div style={{width: "75em", height: "100vh", marginLeft: "25%"}}>
+        <Content movies={item} />
+        <Header />
         <Pagination
         handleclick = {handlePageClick}
         />
