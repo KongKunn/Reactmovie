@@ -32,7 +32,7 @@ function SlideShow() {
   }, []);
 
   return (
-    <div>
+    <div className="slideShow_">
       <Swiper
         modules={[Navigation, Pagination, Scrollbar, A11y]} // Thêm modules vào Swiper
         spaceBetween={30}

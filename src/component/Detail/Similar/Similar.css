@@ -1,14 +1,12 @@
-.similar-container {
+ .similar-container {
     position: absolute;
     right: 6%;
     top: 49%;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-end;
+    /* display: flex; */
     justify-content: center;
     align-items: center;
   }
-  
+  /*
   .button_cast {
     margin-bottom: 10px;
   }
@@ -28,4 +26,4 @@
   .actor-button span {
     margin-top: 5px;
   }
-  
+   */

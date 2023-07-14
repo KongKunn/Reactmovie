@@ -3,6 +3,9 @@
     width: 81em;
     height: 450px;
 }
+.slideShow_{
+    width: 100%;
+}
 .swiper.swiper-initialized.swiper-horizontal.swiper-backface-hidden{
     border-radius: 20px;
 }
@@ -16,3 +19,10 @@
     margin-left: 10% ;
     margin-right: 10%;
 } */
+@media (max-width: 1280px) {
+
+    .img_slidehow{
+        width: 81em;
+        height: 380px;
+    }
+}

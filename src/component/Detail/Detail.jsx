@@ -18,9 +18,9 @@ const Detail = ({ movie }) => {
         <Header />
         <div className="content_detail">
           <MovieDetail movie={movie} />
-          <Trailer />
         </div>
-        <div >
+
+        <div>
           <CastDetail />
         </div>
         <div>

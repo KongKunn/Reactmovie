@@ -10,27 +10,32 @@ import PageSearch from "./component/pages/PageSearch";
 import PageSearchQuery from "./component/pages/PageSearchQuery";
 import Detail from "./component/Detail/Detail";
 import PageDetail from "./component/pages/PageDetail";
-import {  onAuthStateChanged } from "firebase/auth";
+import { onAuthStateChanged } from "firebase/auth";
 import { auth } from "./firebase";
+import { Toaster } from "react-hot-toast";
+import { collection, doc, setDoc } from "firebase/firestore"; 
+import { db } from "./firebase";
 
 const App = () => {
-
+  
   return (
     <>
+      <div>
+        <Toaster  position="bottom-right"
+  reverseOrder={false} />
+      </div>
       <Routes>
         <Route path="/" element={<PageHome />} />
         <Route path="/WatchList" element={<PageWatchList />} />
         <Route path="/ComingSoon" element={<PageComingSoon />} />
-        <Route path="/TopRated" element={<PageTopRated />}  />
-         
+        <Route path="/TopRated" element={<PageTopRated />} />
+
         <Route path="/Login" element={<PageLogin />} />
         <Route path="/Search" element={<PageSearch />} />
         <Route path="/QuerySearch" element={<PageSearchQuery />} />
-        <Route path="/detail" >
-          <Route path=":id"  element={<PageDetail />} />
+        <Route path="/detail">
+          <Route path=":id" element={<PageDetail />} />
         </Route>
-
-
       </Routes>
     </>
   );

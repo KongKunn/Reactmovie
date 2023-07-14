@@ -5,15 +5,15 @@ import Nav from "../Nav/Nav";
 import Main from "../Main/Main";
 import Content from "../Main/Content/Content";
 import Body from "../Main/Body/Body";
-import PageTopRated from "./PageTopRated";
-import PageComingSoon from "./PageComingSoon";
+
 import "./PageHome.css";
-import { Pagination } from "swiper";
-import { auth } from "../../firebase";
+
+
 
 import {  onAuthStateChanged } from "firebase/auth";
 
 const PageHome = () => {
+
   const options = {
     method: "GET",
     headers: {

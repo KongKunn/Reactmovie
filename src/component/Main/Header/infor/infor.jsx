@@ -1,15 +1,19 @@
-import React from 'react'
-import "./infor.css"
+import React from 'react';
+import { useSelector } from 'react-redux';
+import "./infor.css";
+
 const Infor = () => {
+  const changeUsername = useSelector((state) => state.changeUsername);
+
   return (
     <div className='infor'>
-    <img class="avatar" src="./IMG/avatar.png" alt="" />
-    <div>
-      <h3 class="name_infor">Eva</h3>
-      <h5 class="level_infor">Level : 99</h5>
+      <img className="avatar" src="./IMG/avatar.png" alt="" />
+      <div>
+        <h3 className="name_infor">{changeUsername}</h3>
+        <h5 className="level_infor">Level : 99</h5>
+      </div>
     </div>
-  </div>
-  )
+  );
 }
 
-export default Infor
+export default Infor;

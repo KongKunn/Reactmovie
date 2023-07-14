@@ -5,19 +5,43 @@ import "./Nav.css";
 import { auth } from "../../firebase";
 import { signOut } from "firebase/auth";
 import { onAuthStateChanged } from "firebase/auth";
+import { useDispatch } from "react-redux";
+import { setUsername } from "../Redux/SliceUserName";
+import { toast } from "react-hot-toast";
+
 const Nav = () => {
-  const out = () => {
+  const dispatch = useDispatch();
+
+  const out = async () => {
+
+
     signOut(auth);
+    dispatch(setUsername(null));
     console.log(auth);
-    alert("đã đăng xuất")
+    toast('logged out!', {
+      icon: '👋',
+    });
   };
   const check = () => {
     onAuthStateChanged(auth, (user) => {
+      console.log(user);
       if (user) {
-        const uid = user.uid;
-        alert(`Tài Khoản ${user.email} Đang Hoạt Động`); // ...
+        toast(
+          <div>
+            Account <span style={{ color: "red" }}>{user.displayName}</span> is
+            active
+          </div>,
+          {
+            icon: "👏",
+            style: {
+              borderRadius: "10px",
+              background: "#333",
+              color: "#fff",
+            },
+          }
+        );
       } else {
-        alert('Không có tài khoản nào ')
+        toast("No active accounts ");
       }
     });
   };

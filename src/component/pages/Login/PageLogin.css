@@ -1,3 +1,8 @@
+.Main_Login{
+  width: 75em;
+  margin-left: 25%;
+  height: 100vh;
+}
 .main {
   position: relative;
   display: flex;
@@ -11,8 +16,7 @@
   border-radius: 12px;
   box-shadow: 7px 7px 10px 3px #24004628;
 }
-
-.form {
+ .form {
   display: flex;
   flex-direction: column;
   gap: 14px;
@@ -98,4 +102,10 @@ label {
 
 .form button:hover {
   background-color: #6d44b8;
+}
+@media (max-width: 1280px){
+  .Main_Login{
+    width: 75em;
+    margin-left: 20%;
+  }
 }
