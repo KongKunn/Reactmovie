@@ -1,6 +1,9 @@
 .img_detail{
+    display: flex;
     padding-top: 10%;
     /* background-color: blue; */
+    justify-content: center;
+    text-align: center;
 }
 
 .img_backgroud{

@@ -2,7 +2,8 @@
     display: flex;
     flex-wrap: wrap;
     /* padding-top: 10%; */
-    justify-content: flex-start;
+    /* justify-content: flex-start; */
+    /* justify-content: center; */
   }
   
   .movie-item {
@@ -24,6 +25,7 @@
   }
   
   .movie-name {
+    width: 100%;
     font-size: 16px;
     font-weight: bold;
     margin-top: 8px;
@@ -37,8 +39,13 @@
   
   .movie-rating {
     font-size: 14px;
-    color: #888;
+    color: yellow;
   }
   button{
     margin: 1.5% 0;
+  }
+  .movie-details{
+    display: block;
+    text-align: center;
+    justify-content:  center;
   }

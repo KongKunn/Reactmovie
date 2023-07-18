@@ -36,7 +36,6 @@ const CastDetail = () => {
       })
       .catch((err) => console.error(err));
   }, [params.id]);
-  console.log("PÂP", cast);
   return (
     < div className="billcast">
            <h2>Top Billed Cast</h2>

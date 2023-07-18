@@ -20,7 +20,7 @@ const Content = ({ movies }) => {
             </div>
             <div className="movie-details">
               <h2 className="movie-name">{movie.title}</h2>
-              <p className="movie-date">{movie.date}</p>
+              <p className="movie-date">{movie.release_date}</p>
               <p className="movie-rating">Rating: {movie.vote_average}</p>
             </div>
           </div>

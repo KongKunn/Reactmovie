@@ -1,14 +1,15 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 const Setting = () => {
   return (
     <div className="menu_button">
-      <Link to="/Setting">
+      <NavLink to="/Setting">
+
         <button>
           <i className="fas fa-calendar-alt"></i>
-          Setting
+          Favorite
         </button>
-      </Link>
+      </NavLink>
     </div>
   );
 };

@@ -1,9 +1,12 @@
 .pagination{
     display: flex;
-    list-style: none   ;
-    padding: 0;
+    margin-right: 25%;
+    list-style: none;
+    padding-top: 2%;
     margin-bottom: 6%;
     cursor: pointer;
+
+    justify-content: center;
 }
 
 a{
@@ -11,4 +14,7 @@ a{
 }
 .page-item{
     margin-right: 50px;
+}
+.page-item:active{
+    color: red;
 }

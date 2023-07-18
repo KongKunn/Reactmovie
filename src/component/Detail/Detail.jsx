@@ -20,12 +20,11 @@ const Detail = ({ movie }) => {
           <MovieDetail movie={movie} />
         </div>
 
-        <div>
+        <div className="detail_more">
           <CastDetail />
-        </div>
-        <div>
           <Similar />
         </div>
+    
       </div>
     </div>
   );

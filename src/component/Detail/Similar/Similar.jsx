@@ -1,10 +1,11 @@
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import "./Similar.css"
+import { Link } from "react-router-dom";
 
 const Similar = () => {
   const [similar, setSimilar] = useState([]);
-  const [visibleCount, setVisibleCount] = useState(5); 
+  const [visibleCount, setVisibleCount] = useState(5);
   const params = useParams();
   const options = {
     method: "GET",
@@ -29,20 +30,23 @@ const Similar = () => {
   }, [params.id]);
 
   const handleShowMore = () => {
-    setVisibleCount(similar.length);  
+    setVisibleCount(similar.length);
   };
 
   return (
     <div className="similar-container">
-        <h2>Similar</h2>
+      <h2>Similar</h2>
       {similar.slice(0, visibleCount).map((similar) => (
         <div className="button_cast" key={similar.id}>
           <button className="actor-button">
-            <img
-              src={`https://image.tmdb.org/t/p/w500/${similar.backdrop_path}`}
-              alt={similar.name}
-            />
-            <span>{similar.title}</span>
+            <Link to={`/detail/${similar.id}`}>
+              <img
+                src={`https://image.tmdb.org/t/p/w500/${similar.backdrop_path}`}
+                alt={similar.name}
+              />
+              <span>{similar.title}</span>
+            </Link>
+
           </button>
         </div>
       ))}

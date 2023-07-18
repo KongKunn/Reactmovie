@@ -12,12 +12,15 @@
     background-color: #fff; */
 }
 .detail_Header{
-    /* width: 75em;
-    height: 100vh;
-    margin-left: 25%; */
+  width: 100%;
+  display: block;
 
 }
 .content_detail{
   display: flex;
   justify-content: center;
+  padding: 3em;
+}
+.detail_more{
+  
 }

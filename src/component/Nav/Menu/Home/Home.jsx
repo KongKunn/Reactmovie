@@ -1,15 +1,15 @@
 import React from 'react'
 import "../Menu.css"
-import { Link } from 'react-router-dom'
+import {  NavLink } from 'react-router-dom'
 const Home = () => {
   return (
     <div className='menu_button'>
-     <Link to = "/">
+     <NavLink to = "/">
      <button>
       <i class="fas fa-home"></i>
        Home
       </button>
-     </Link>
+     </NavLink>
     </div>
   )
 }

@@ -4,6 +4,9 @@ import Header from "../Main/Header/Header";
 import Component from "../Component";
 import Content from "../Main/Content/Content";
 import { Outlet} from "react-router-dom";
+import "./Page.css"
+import Pagination from "../Main/Pagination/Pagination";
+
 
 
 const PageTopRated = () => {
@@ -15,27 +18,38 @@ const PageTopRated = () => {
         "Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiI5NDBmNDE5Nzg2ODdlYjRkNDA4MTRjZWQ5NmMxNGY3MiIsInN1YiI6IjY0NjVkMWI1ZDE4NTcyMDE0MDJmNmI4ZiIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.UWuHQwXdC-wJxn69D49_xz7tgNxq8pC9aKv1IK0FmF0",
     },
   };
+    const [currentPage, setCurrentPage] = useState(1);
   const [toprate, setToprate] = useState([]);
 
   useEffect(() => {
-    fetch(
-      "https://api.themoviedb.org/3/movie/top_rated?language=en-US&page=1",
-      options
-    )
-      .then((response) => response.json())
-      .then((response) => {
-        setToprate(response.results);
-      })
-      .catch((err) => console.error(err));
-  }, []);
+    const fetchData = () => {
+      const urlSearch = `https://api.themoviedb.org/3/movie/popular?language=en-US&page=${currentPage}`;
+      fetch(urlSearch, options)
+        .then((response) => response.json())
+        .then((response) => {
+          setToprate(response.results);
+        });
+    };
+
+    fetchData();
+  }, [currentPage]);
+
+  const handlePageClick = (data) => {
+    const selectpage = data.selected + 1;
+    console.log("XX", data);
+    setCurrentPage(selectpage);
+    console.log(selectpage);
+  };
 
   return (
     <>
       <Nav />
-      <div style={{ width: "75em", marginLeft: "25%" }}>
+      <div className="body_page">
         <Header />
-        
+        <div style={{paddingTop:'6%'}}>
         <Content movies={toprate} />
+        </div>
+        <Pagination handleclick={handlePageClick}/>
         <Outlet/>
       </div>
     </>

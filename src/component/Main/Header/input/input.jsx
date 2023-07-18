@@ -7,17 +7,13 @@ import { Navigate } from "react-router-dom";
 const Input = () => {
   const [input, setInput] = useState("");
 
- 
+ const navUrl = "/QuerySearch?searchWord=" + input
   const [searchParams, setSearchParams] = useSearchParams();
 
   const navigate = useNavigate();
   const handleClick = () => {
-    navigate({
-      pathname: "/QuerySearch",
-      search: createSearchParams({
-        searchWord: input,
-      }).toString(),
-    });
+    console.log("click")
+    navigate(navUrl);
   };
 const hanldleEnter =(e)=> {
  if( e.key === 'Enter')
@@ -25,7 +21,7 @@ const hanldleEnter =(e)=> {
 
 }
 const handleChangeInput = (e) => {
-  console.log(2);
+
   setInput(e.target.value);
 };
 

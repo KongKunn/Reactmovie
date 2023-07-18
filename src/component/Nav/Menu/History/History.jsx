@@ -1,16 +1,16 @@
-import React from "react";
+import React from 'react'
 import { NavLink } from "react-router-dom";
-const Comingsoon = () => {
+const History = () => {
   return (
     <div className="menu_button">
-      <NavLink to="/ComingSoon">
+      <NavLink to="/History">
         <button>
           <i className="fas fa-calendar-alt"></i>
-          Coming Soon
+         History
         </button>
       </NavLink>
     </div>
-  );
-};
+  )
+}
 
-export default Comingsoon;
+export default History

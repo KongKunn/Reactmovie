@@ -7,9 +7,9 @@ const Pagination = ({handleclick}) => {
   return (
     <>
       <ReactPaginate
-        previousLabel={"<<"}
-        nextLabel={">>"}
-        breakLabel={"..."}
+        previousLabel={"<"}
+        nextLabel={">"}
+        breakLabel={"..."} 
         pageCount={16}
         onPageChange={handleclick}
         containerClassName={"pagination"}

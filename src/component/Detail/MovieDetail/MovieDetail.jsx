@@ -21,8 +21,9 @@ const MovieDetail = ({ movie }) => {
     const docRef = doc(db, "Favorite", changeEmail);
 
     const docSnap = await getDoc(docRef);
-    if (docSnap.exists()&&docSnap.data().movieID) {
-      if (Object.values(docSnap.data().movieID).includes(movie.id)) {
+    console.log(docSnap.data())
+    if (docSnap.exists() && docSnap.data().FavoriteID) {
+      if (Object.values(docSnap.data().FavoriteID).includes(movie.id)) {
         toast("Movies already in Favorite", {
           icon: "🔸",
           style: {
@@ -34,17 +35,17 @@ const MovieDetail = ({ movie }) => {
       } else {
         toast.success("Added to Favorites!");
         await updateDoc(docRef, {
-          movieID: arrayUnion(movie.id),
-          Listmovie: arrayUnion(movie),
+          FavoriteID: arrayUnion(movie.id),
+          FavoriteList: arrayUnion(movie),
 
         });
       }
-    } 
-    else{
+    }
+    else {
       await setDoc(docRef, {
-        movieID: [movie.id],
-        Listmovie:[movie]
-      },{merge:true});
+        FavoriteID: [movie.id],
+        FavoriteList: [movie]
+      }, { merge: true });
     }
   };
 
@@ -53,8 +54,8 @@ const MovieDetail = ({ movie }) => {
     const docRef = doc(db, "Favorite", changeEmail);
 
     const docSnap = await getDoc(docRef);
-    const listmovie = docSnap.data().movieID;
-    if (!(docSnap.data().movieID).includes(movie.id)){
+    const FavoriteList = docSnap.data().FavoriteID;
+    if (!(docSnap.data().FavoriteID).includes(movie.id)) {
       toast("Movie not in Favorite", {
         icon: "🔸",
         style: {
@@ -66,28 +67,34 @@ const MovieDetail = ({ movie }) => {
     } else {
       toast.success("Removed movie in Favorite!");
       await updateDoc(docRef, {
-        movieID: arrayRemove(movie.id),
-        Listmovie: arrayRemove(movie)
+        FavoriteID: arrayRemove(movie.id),
+        FavoriteList: arrayRemove(movie)
       });
     }
   };
-  const handleHistory = async()=> {
+  const handleHistory = async () => {
     console.log(changeEmail);
 
     const docRef = doc(db, "Favorite", changeEmail);
     const docSnap = await getDoc(docRef);
-    if(docSnap.exists()&&docSnap.data().movieID){
+    if (docSnap.exists() && docSnap.data().HistoryList) {
       await updateDoc(docRef, {
-        HistoryList: arrayUnion(movie.id),
-    })
+        HistoryID: arrayRemove(movie.id),
+        HistoryList: arrayRemove(movie),
+      }).then(await updateDoc(docRef, {
+        HistoryID: arrayUnion(movie.id),
+        HistoryList: arrayUnion(movie),
+      }))
 
+
+    }
+    else {
+      await setDoc(docRef, {
+        HistoryID: arrayUnion(movie.id),
+        HistoryList: arrayUnion(movie),
+      }, { merge: true });
+    }
   }
-  else{
-    await setDoc(docRef, {
-        HistoryList: [...[movie.id]],
-      },{merge:true});
-  }
-}
   return (
     <div className="img_detail">
       <h1>{movie.original_title}</h1>

@@ -1,16 +1,30 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useSelector } from 'react-redux';
 import "./infor.css";
+import EditInfor from './EditInfor';
 
 const Infor = () => {
   const changeUsername = useSelector((state) => state.changeUsername);
+  const [isEditing, setIsEditing] = useState(false);
+
+  const handleEdit = () => {
+    setIsEditing(!isEditing); 
+  }
 
   return (
     <div className='infor'>
-      <img className="avatar" src="./IMG/avatar.png" alt="" />
+      <button onClick={handleEdit}>Edit</button>
       <div>
-        <h3 className="name_infor">{changeUsername}</h3>
-        <h5 className="level_infor">Level : 99</h5>
+        {isEditing ? (
+          <div className='Editt'>
+           <EditInfor setIsEditing ={setIsEditing}/>
+          </div>
+         ) : 
+          (
+          <>
+            <h3 className="name_infor">{changeUsername}</h3>
+          </>
+        )}
       </div>
     </div>
   );

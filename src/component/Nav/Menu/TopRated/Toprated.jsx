@@ -1,15 +1,15 @@
 import React from "react";
-import "../Menu.css";
-import { Link } from "react-router-dom";
+//import "../Menu.css";
+import { NavLink } from "react-router-dom";
 const Toprated = () => {
   return (
     <div className="menu_button">
-      <Link to="/TopRated">
+      <NavLink to="/TopRated">
         <button>
           <i class="fas fa-star"></i>
           Top Rated
         </button>
-      </Link>
+      </NavLink>
     </div>
   );
 };

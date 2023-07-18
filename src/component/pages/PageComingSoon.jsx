@@ -43,8 +43,10 @@ const PageComingSoon = () => {
       <Nav />
     
 
-      <div style={{width: "75em", height: "100vh", marginLeft: "25%"}}>
+      <div className="body_page">
+      <div style={{paddingTop:'6%'}}>
         <Content movies={item} />
+        </div>
         <Header />
         <Pagination
         handleclick = {handlePageClick}
