@@ -1,5 +1,5 @@
 .img_detail{
-    display: flex;
+    display: block;
     padding-top: 10%;
     /* background-color: blue; */
     justify-content: center;
@@ -29,7 +29,6 @@
     }
     .Favorite button{
         font-size: 1em;
-        background-color: black;
         margin: 10px;
         padding: 10px;
         border-radius: 10%;

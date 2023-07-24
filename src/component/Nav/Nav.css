@@ -1,17 +1,19 @@
 .navbar {
   position: fixed;
-    font-size: 1rem;
-    top: 0;
-    width: 20%;
-    height: 100vh;
-    background-color: #f2f2f2;
-    float: left;
-    /* padding: 5% 0 0 2%; */
+  font-size: 1rem;
+  top: 0;
+  width: 20%;
+  height: 100vh;
+  background-color: #f2f2f2;
+  float: left;
   }
   .navbar div{
-padding: 0% 0 0 8% ;  
+/* padding: 0% 0 0 8% ;   */
 }
 
 @media (max-width: 414px){
   
+}
+.btn:active{
+  fill: #fd1853;
 }

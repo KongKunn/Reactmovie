@@ -2,10 +2,11 @@
     display: block;
   }
   .menu_button button {
+    width: 100%;
     position: relative;
     margin: 5% 0;
     font-size: 0.9em;
-  
+  padding-right: 10%;
     border: none;
     font-weight: bold;
     transition: 0.6s ease-in-out;

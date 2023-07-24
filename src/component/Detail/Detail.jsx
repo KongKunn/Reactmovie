@@ -14,7 +14,7 @@ const Detail = ({ movie }) => {
       <div className="detail_Nav">
         <Nav />
       </div>
-      <div className="detail_Header">
+      <div className="Container_detail">
         <Header />
         <div className="content_detail">
           <MovieDetail movie={movie} />

@@ -8,6 +8,7 @@ const Nav = () => {
     <div className="navbar">
       <Logo />
       <Menu />
+      
     </div>
   );
 };
