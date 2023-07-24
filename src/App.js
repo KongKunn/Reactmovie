@@ -17,6 +17,7 @@ import { db } from "./firebase";
 import Infor from "./component/Main/Header/infor/infor";
 import EditInfor from "./component/Main/Header/infor/EditInfor";
 import PageHistory from "./component/pages/PageHistory";
+import PageFavorite from "./component/pages/PageFavorite";
 
 const App = () => {
   return (
@@ -31,6 +32,7 @@ const App = () => {
         <Route path="/ComingSoon" element={<PageComingSoon />} />
         <Route path="/TopRated" element={<PageTopRated />} />
         <Route path="/History" element={<PageHistory />} />
+        <Route path="/Favorite" element={<PageFavorite />} />
 
         <Route path="/Login" element={<PageLogin />} />
         <Route path="/QuerySearch" element={<PageSearchQuery />} />

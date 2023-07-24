@@ -10,7 +10,7 @@ import {
   arrayRemove,
   addDoc,
 } from "firebase/firestore";
-import { db } from "../../../firebase";
+import { db, storage } from "../../../firebase";
 import { arrayUnion } from "firebase/firestore";
 import { toast } from "react-hot-toast";
 
@@ -18,12 +18,20 @@ const MovieDetail = ({ movie }) => {
   const changeEmail = useSelector((state) => state.changeEmail);
 
   const handlecFavorite = async () => {
+    if (!changeEmail) {
+      toast.error("You need to be logged in to add to favorites!", {
+        icon: "🔸"
+        },
+      );
+      return;
+    }
+
     const docRef = doc(db, "Favorite", changeEmail);
 
     const docSnap = await getDoc(docRef);
     console.log(docSnap.data())
     if (docSnap.exists() && docSnap.data().FavoriteID) {
-      if (Object.values(docSnap.data().FavoriteID).includes(movie.id)) {
+      if ((docSnap.data().FavoriteID).includes(movie.id)) {
         toast("Movies already in Favorite", {
           icon: "🔸",
           style: {
@@ -37,7 +45,6 @@ const MovieDetail = ({ movie }) => {
         await updateDoc(docRef, {
           FavoriteID: arrayUnion(movie.id),
           FavoriteList: arrayUnion(movie),
-
         });
       }
     }
@@ -50,9 +57,15 @@ const MovieDetail = ({ movie }) => {
   };
 
   const handleRemoveFavorite = async () => {
-
+    if (!changeEmail) {
+      toast.error("You need to be logged in to add to Remove Favorite!", {
+        icon: "🔸"
+        },
+      );
+      return;
+    }
     const docRef = doc(db, "Favorite", changeEmail);
-
+    
     const docSnap = await getDoc(docRef);
     const FavoriteList = docSnap.data().FavoriteID;
     if (!(docSnap.data().FavoriteID).includes(movie.id)) {
@@ -73,7 +86,13 @@ const MovieDetail = ({ movie }) => {
     }
   };
   const handleHistory = async () => {
-    console.log(changeEmail);
+    if (!changeEmail) {
+      toast.error("You need to be logged in to add to History!", {
+        icon: "🔸"
+        },
+      );
+      return;
+    }
 
     const docRef = doc(db, "Favorite", changeEmail);
     const docSnap = await getDoc(docRef);

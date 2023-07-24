@@ -6,5 +6,10 @@
   
 }
 .active button{
-  background-color: red;
+  background-color: rgb(177, 23, 23);
+  transition: 0.5s ;
 }
+/* .page-content{
+  width: 50%;
+}
+.bodypage */

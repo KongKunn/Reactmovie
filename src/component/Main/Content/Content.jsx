@@ -3,7 +3,7 @@ import "./Content.css";
 import { Link } from "react-router-dom";
 
 const Content = ({ movies }) => {
-  console.log("MOVIE", movies);
+  console.log(111111);
   return (
     <>
       <div className="movie-list">
@@ -16,7 +16,6 @@ const Content = ({ movies }) => {
                 alt={movie.title}
               />
               </Link>
-              
             </div>
             <div className="movie-details">
               <h2 className="movie-name">{movie.title}</h2>

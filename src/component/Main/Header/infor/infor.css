@@ -1,21 +1,15 @@
 .infor {
     display: flex;
     width: 200px;
-  }
-  .name_infor {
-    width: 90%;
-    padding-left: 20px;
-  }
-  .level_infor {
-    padding-left: 20px;
-    opacity: 0.7;
-  }
-  .avatar {
-    width: 50px;
-    margin-left: 20px;
-    border-radius: 50%;
-    justify-content: flex-end;
-  }
-  .Editt{
-    padding-right: 20px;
-  }
+}
+.edit-profile{
+display: flex;
+}
+.edit-profile img {
+ width: 30%;
+ cursor: pointer;
+}
+.edit-profile h3 {
+  width: 100%;
+  cursor: pointer;
+}

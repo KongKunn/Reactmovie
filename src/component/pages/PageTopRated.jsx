@@ -46,7 +46,7 @@ const PageTopRated = () => {
       <Nav />
       <div className="body_page">
         <Header />
-        <div style={{paddingTop:'6%'}}>
+        <div className="page-content">
         <Content movies={toprate} />
         </div>
         <Pagination handleclick={handlePageClick}/>

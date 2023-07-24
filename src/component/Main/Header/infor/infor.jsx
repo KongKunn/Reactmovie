@@ -1,11 +1,14 @@
 import React, { useState } from 'react';
-import { useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import "./infor.css";
 import EditInfor from './EditInfor';
 
 const Infor = () => {
+  const dispatch = useDispatch();
   const changeUsername = useSelector((state) => state.changeUsername);
+  const changeAvatar = useSelector((state) => state.changeAvatar);
   const [isEditing, setIsEditing] = useState(false);
+  const [newAvatar, setNewAvatar] = useState()
 
   const handleEdit = () => {
     setIsEditing(!isEditing); 
@@ -13,20 +16,25 @@ const Infor = () => {
 
   return (
     <div className='infor'>
-      <button onClick={handleEdit}>Edit</button>
+      
       <div>
         {isEditing ? (
           <div className='Editt'>
-           <EditInfor setIsEditing ={setIsEditing}/>
+           <EditInfor setIsEditing ={setIsEditing} setnewAVA = {setNewAvatar}
+           />
           </div>
          ) : 
           (
           <>
-            <h3 className="name_infor">{changeUsername}</h3>
+                <img style={{width:"50px"}} onClick={handleEdit} src={newAvatar} alt="" />
+                
+            <h3 onClick={handleEdit} className="name_infor">{changeUsername}</h3>
           </>
+          
         )}
       </div>
     </div>
+    
   );
 }
 

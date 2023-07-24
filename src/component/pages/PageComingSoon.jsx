@@ -1,10 +1,8 @@
 import React, { useState, useEffect } from "react";
 import Nav from "../Nav/Nav";
 import Header from "../Main/Header/Header";
-import Component from "../Component";
 import Content from "../Main/Content/Content";
 import Pagination from "../Main/Pagination/Pagination";
-import ReactPaginate from "react-paginate";
 
 const PageComingSoon = () => {
   const options = {
